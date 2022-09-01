@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Bendit Chan</title>
+        <link>https://blastzit.github.io/zh-hk/</link>
+        <description>Recent content on Bendit Chan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language><atom:link href="https://blastzit.github.io/zh-hk/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>關於我</title>
+        <link>https://blastzit.github.io/zh-hk/%E9%97%9C%E6%96%BC%E6%88%91/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blastzit.github.io/zh-hk/%E9%97%9C%E6%96%BC%E6%88%91/</guid>
+        <description>&lt;p&gt;Hi! I am Bendit, Tsz Hin Chan (Chinese: 陳祉軒). I am from Hong Kong, currently a student of Mathematics in Imperial College London.&lt;/p&gt;
+&lt;p&gt;More about my course: &lt;a class=&#34;link&#34; href=&#34;https://www.imperial.ac.uk/study/ug/courses/mathematics-department/mathematics-msci/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;facts&#34;&gt;Facts&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;I know $(4+\epsilon)$ languages: Cantonese, Mandarin, English, Korean and a little bit of French and Japanese.&lt;/li&gt;
+&lt;li&gt;I can play the piano and violin, but I listen to K-pop.&lt;/li&gt;
+&lt;li&gt;I enjoy puzzlehunts.&lt;/li&gt;
+&lt;li&gt;I like to produce music in my free time.&lt;/li&gt;
+&lt;li&gt;Eating and thinking about what to eat spans 70% of my time besides Mathematics.&lt;/li&gt;
+&lt;li&gt;I made some of the animations in &lt;a class=&#34;link&#34; href=&#34;https://thehottgameguide.readthedocs.io/en/latest/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;The HoTT Game&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
