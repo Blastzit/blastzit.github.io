@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Bendit Chan</title>
-        <link>https://blastzit.github.io/</link>
-        <description>Recent content on Bendit Chan</description>
+        <title>Posts on Bendit Chan</title>
+        <link>https://blastzit.github.io/post/</link>
+        <description>Recent content in Posts on Bendit Chan</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blastzit.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blastzit.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>An adventure to find 27 lines on a smooth cubic surface</title>
         <link>https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/</link>
         <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
@@ -254,77 +254,6 @@ so under the basis $\lbrace e_1\wedge e_2,e_1\wedge e_3,e_2\wedge e_3\rbrace$ th
 &lt;h2 id=&#34;part-2-the-problem&#34;&gt;Part 2: The problem&lt;/h2&gt;
 &lt;h2 id=&#34;part-3-the-solution&#34;&gt;Part 3: The solution&lt;/h2&gt;
 </description>
-        </item>
-        <item>
-        <title>Archives</title>
-        <link>https://blastzit.github.io/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://blastzit.github.io/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>About Me</title>
-        <link>https://blastzit.github.io/about-me/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blastzit.github.io/about-me/</guid>
-        <description>&lt;p&gt;Hi! I am Bendit, Tsz Hin Chan (Chinese: 陳祉軒). I am from Hong Kong, currently a student of Mathematics in Imperial College London.&lt;/p&gt;
-&lt;p&gt;More about my course: &lt;a class=&#34;link&#34; href=&#34;https://www.imperial.ac.uk/study/ug/courses/mathematics-department/mathematics-msci/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;facts&#34;&gt;Facts&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;I know $(4+\epsilon)$ languages: Cantonese, Mandarin, English, Korean and a little bit of French and Japanese.&lt;/li&gt;
-&lt;li&gt;I can play the piano and violin, but I listen to K-pop.&lt;/li&gt;
-&lt;li&gt;I enjoy puzzlehunts.&lt;/li&gt;
-&lt;li&gt;I like to produce music in my free time.&lt;/li&gt;
-&lt;li&gt;Eating and thinking about what to eat spans 70% of my time besides Mathematics.&lt;/li&gt;
-&lt;li&gt;I made some of the animations in &lt;a class=&#34;link&#34; href=&#34;https://thehottgameguide.readthedocs.io/en/latest/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;The HoTT Game&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Links</title>
-        <link>https://blastzit.github.io/links/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blastzit.github.io/links/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Notes</title>
-        <link>https://blastzit.github.io/notes/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blastzit.github.io/notes/</guid>
-        <description>&lt;p&gt;Here are my non-exhaustive list of self-made notes. I never finished studying most of the topics, so the notes are incomplete. Also please forgive my typos.&lt;/p&gt;
-&lt;h3 id=&#34;notes-made-during-high-school&#34;&gt;Notes made during high-school&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;local_fields.pdf&#34; &gt;Local Fields&lt;/a&gt; (Jul 2017) – Incomplete notes during a study of local fields with my friend Mark Lau.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;notes-made-during-university&#34;&gt;Notes made during university&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;lin_alg.pdf&#34; &gt;Linear Algebra&lt;/a&gt; (finished; last update: 25 Mar 2022) – Notes of the course M40003 (Linear Algebra &amp;amp; Groups) in Imperial College London, following multiple sources.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Algebraic Geometry – Ongoing notes of my first attempt at studying algebraic geometry.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;alg_geom_varieties.pdf&#34; &gt;Part I: Varieties&lt;/a&gt; (active; last update: 25 Aug 2022), following Gathmann’s notes and Smith et al.’s book; created for my first-year UROP.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;alg_geom_schemes.pdf&#34; &gt;Part II: Schemes&lt;/a&gt; (paused; last update: 2 Dec 2021), following Vakil’s and Hartshorne’s book.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Search</title>
-        <link>https://blastzit.github.io/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blastzit.github.io/search/</guid>
-        <description></description>
         </item>
         
     </channel>

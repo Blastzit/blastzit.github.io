@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Algebraic geometry has always been one of my dream topics to study since the first time I&amp;rsquo;m exposed to the notion. Ravi Vakil, being the author of one of the greatest notes in AG, quotes the following in Chapter 27:
+Wake an algebraic geometer in the dead of night, whispering: “27”. Chances are, he will respond: “lines on a cubic surface”. &amp;ndash; R. Donagi and R. Smith, (on page 27)'><title>An adventure to find 27 lines on a smooth cubic surface</title>
+
+<link rel='canonical' href='https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/'>
+
+<link rel="stylesheet" href="/scss/style.min.5a8e892f6fa14515e9065eee1f5d2e05302606ec7f11750b2fb95198f9cdcbfd.css"><meta property='og:title' content='An adventure to find 27 lines on a smooth cubic surface'>
+<meta property='og:description' content='Algebraic geometry has always been one of my dream topics to study since the first time I&amp;rsquo;m exposed to the notion. Ravi Vakil, being the author of one of the greatest notes in AG, quotes the following in Chapter 27:
+Wake an algebraic geometer in the dead of night, whispering: “27”. Chances are, he will respond: “lines on a cubic surface”. &amp;ndash; R. Donagi and R. Smith, (on page 27)'>
+<meta property='og:url' content='https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/'>
+<meta property='og:site_name' content='Bendit Chan'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='varieties' /><meta property='article:tag' content='27 lines' /><meta property='article:published_time' content='2022-09-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-09-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/cubic.png' />
+<meta name="twitter:title" content="An adventure to find 27 lines on a smooth cubic surface">
+<meta name="twitter:description" content="Algebraic geometry has always been one of my dream topics to study since the first time I&amp;rsquo;m exposed to the notion. Ravi Vakil, being the author of one of the greatest notes in AG, quotes the following in Chapter 27:
+Wake an algebraic geometer in the dead of night, whispering: “27”. Chances are, he will respond: “lines on a cubic surface”. &amp;ndash; R. Donagi and R. Smith, (on page 27)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/cubic.png' />
+    <link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/images/pikachu_huc30c588a8ae1b99227d43d050a9c3fda_71841_300x0_resize_box_3.png" width="300"
+                            height="299" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Bendit Chan</a></h1>
+            <h2 class="site-description">a math major being like surprised pikachu all the time.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/blastzit'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about-me/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About Me</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/notes/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-notes" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="5" y="3" width="14" height="18" rx="2" />
+  <line x1="9" y1="7" x2="15" y2="7" />
+  <line x1="9" y1="11" x2="15" y2="11" />
+  <line x1="9" y1="15" x2="13" y2="15" />
+</svg>
+                
+                <span>Notes</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://blastzit.github.io/" selected>English</option>
+                        
+                            <option value="https://blastzit.github.io/zh-hk/" >中文</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/">
+                <img src="/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/cubic_hu585602e8503db46d6c6fbbdcdd1adb74_3855916_800x0_resize_box_3.png"
+                        srcset="/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/cubic_hu585602e8503db46d6c6fbbdcdd1adb74_3855916_800x0_resize_box_3.png 800w, /p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/cubic_hu585602e8503db46d6c6fbbdcdd1adb74_3855916_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="304" 
+                        loading="lazy"
+                        alt="Featured image of post An adventure to find 27 lines on a smooth cubic surface" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/mathematics/" style="background-color: #2a9d8f; color: #fff;">
+                Mathematics
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/">An adventure to find 27 lines on a smooth cubic surface</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 02, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    11 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <style>
+    .definition {
+        box-shadow: 6px 6px rgba(20,105,176,0.3);
+        background-color: rgba(20,105,176,0.06);
+        padding: 7px 15px 0.1px;
+    }
+    .example {
+        box-shadow: 6px 6px rgba(10,180,88,0.3);
+        background-color: rgba(10,180,88,0.06);
+        padding: 7px 15px 0.1px;
+    }
+    .theorem {
+        box-shadow: -5px 0px rgba(0,0,0,0.3);
+        background-color: rgba(0,0,0,0.06);
+        padding: 7px 15px 0.1px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .katex > .katex-html {
+        white-space: normal;
+    }
+
+    .katex .base {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    img {
+        margin-bottom: -15px;
+        mix-blend-mode: multiply;
+        width: 100%;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+<p>Algebraic geometry has always been one of my dream topics to study since the first time I&rsquo;m exposed to the notion. Ravi Vakil, being the author of <a class="link" href="http://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf"  target="_blank" rel="noopener"
+    >one of the greatest notes in AG</a>, quotes the following in Chapter 27:</p>
+<blockquote>
+<p>Wake an algebraic geometer in the dead of night, whispering: “27”. Chances are, he will respond: “lines on a cubic surface”.
+&ndash; R. Donagi and R. Smith, (on page 27)</p>
+</blockquote>
+<p>Well, it certainly occurs to me that 27 carries a special meaning to algebraic geometrists. Over the summer I&rsquo;m lucky to have the chance to do a <a class="link" href="https://www.imperial.ac.uk/urop"  target="_blank" rel="noopener"
+    >UROP</a> with <a class="link" href="https://www.imperial.ac.uk/people/j.nicaise"  target="_blank" rel="noopener"
+    >Prof. Johannes Nicaise</a>, and he suggested that I should embark a journey aiming to understand this statement, which is exactly what I did and what I will try to reconstruct in this post.</p>
+<h2 id="part-1-the-tools">Part 1: The tools</h2>
+<p>Before delving into the intricacies of the 27 lines, we need to arm ourselves with some tools. We ought to answer questions like: What is a cubic surface? What is smooth? Where exactly do they live? What are lines? What is 27? <del>What even is maths?</del></p>
+<p>Let us start with the easiest question to answer: what is the ambient space of a cubic surface?</p>
+<h3 id="the-ambient-space">The ambient space</h3>
+<p>In its easiest form, we want to consider the following type of objects:</p>
+<div class="definition">
+<b>Definition 1 (Affine Varieties)</b>
+<p>We call
+$$\mathbb{A}^n:=\lbrace (a_1,\ldots,a_n):a_i\in K ~\text{for}~i=1,\ldots,n\rbrace$$
+the <b style="color: rgb(20,105,176);">affine $n$-space</b> over $K$. For a subset $S\subseteq K[x_1,x_2,\ldots,x_n]$ of polynomials, we call
+$$V(S):=\lbrace x\in \mathbb{A}^n: f(x)=0~\text{for all}~f\in S\rbrace\subseteq \mathbb{A}^n$$
+the <b style="color: rgb(20,105,176);">zero locus</b> of $S$. Subsets of $\mathbb{A}^n$ of this form are called <b style="color: rgb(20,105,176);">affine varieties</b>.</p>
+</div>
+<p>The main idea is that Algebraic Geometry study objects defined via polynomials; for example, a parabola is the zero locus of the polynomial $y-x^2$:</p>
+<div class="center"><img src="parabola-test.png" alt="Parabola" style="width=100%; max-width:350px;" /></div>
+<p>This is natural, but is not good enough: it turns out that these affine varieties are <strong>never compact</strong> in the classical topology (unless they consist of finitely many points). We don&rsquo;t want this because <a class="link" href="https://math.stackexchange.com/questions/85394/why-the-emphasis-on-projective-space-in-algebraic-geometry"  target="_blank" rel="noopener"
+    >some varieties end up having no points</a>, so counting intersections on our cubics and all sorts of related stuff fail.</p>
+<p>The way out of this is to consider a &ldquo;compactification&rdquo; of $\mathbb{A}^n$. Suppose you have two equations that originally does not intersect in the affine space, say:</p>
+<p>$$x+y=1~~~\text{and}~~~x+y=2.$$</p>
+<p>By making the equation <em>homogeneous</em>, i.e. such that all terms have the same degree, we resolve this problem: the new equations are then</p>
+<p>$$x+y=z~~~\text{and}~~~x+y=2z,$$</p>
+<p>so they intersect at $(x,y,z)=(\lambda,-\lambda,0)$, which we can think of as a &ldquo;point&rdquo; infinitely far in the direction of $(1,-1,0)$.</p>
+<div class="center"><img src="point-at-infinity.png" alt="Point at infinity" style="width=100%; max-width:350px;" /></div>
+<p>Note that we always get &ldquo;lines through the origin&rdquo; as solutions of homogeneous equations (in this particular case, the line is spanned by $(1,-1,0)$), since if $f(x_1,\ldots,x_n)$ is homogeneous then</p>
+<p>$$f(x_1,\ldots,x_n)=0~\Longrightarrow~f(\lambda x_1,\ldots,\lambda x_n)=0$$</p>
+<p>for any $\lambda\in K$. This motivates the definition of the <b style="color: rgb(20,105,176);">projective space</b>:</p>
+<div class="definition">
+<b>Definition 2 (Projective Varieties)</b>
+<p>Let $n\in\mathbb{N}$. The <b style="color: rgb(20,105,176);">projective $n$-space</b> over $K$ is defined as
+$$\mathbb{P}^n:=(K^{n+1}\setminus\lbrace 0 \rbrace)/\sim$$
+where $\sim$ is the equivalence relation
+$$(x_0,\ldots,x_n)\sim(y_0,\ldots,y_n)~:\Leftrightarrow~x_i=\lambda y_i~\text{for some}~\lambda\in K^{\ast}~\text{and all}~i.$$
+The equivalence class of $(x_0,\ldots,x_n)$ will be denoted by $[x_0:\cdots:x_n]\in\mathbb{P}^n$. For a subset $S\subseteq K[x_0,\ldots,x_n]$ of homogeneous polynomials, we call
+$$V(S):=\lbrace x\in \mathbb{P}^n: f(x)=0~\text{for all}~f\in S\rbrace\subseteq \mathbb{P}^n$$
+the <b style="color: rgb(20,105,176);">zero locus</b> of $S$. Subsets of $\mathbb{P}^n$ of this form are called <b style="color: rgb(20,105,176);">projective varieties</b>.</p>
+</div>
+<p>Note that we really need the homogeneous condition in the definition of projective zero locus for it to make sense: if not, say $f([x:y])=x+y+1$ when $n=1$, then</p>
+<p>$$f([-1:0])=0~~~\text{and}~~~f([1:0])=2,$$</p>
+<p>yet $[-1:0]=[1:0]$ in $\mathbb{P}^1$. So the zero locus of $f$ is not well-defined here.</p>
+<p>Note: from now on, all fields $K$ in discussion will be an algebraically closed field with characteristic zero, so you may assume $K=\mathbb{C}$.</p>
+<h3 id="the-zariski-topology">The Zariski Topology</h3>
+<p>The next step is to endow a topological structure on every variety. As a result,</p>
+<ul>
+<li>we can view varieties as an object in their own right, instead of an object locked in an ambient space $\mathbb{A}^n$ or $\mathbb{P}^n$.</li>
+<li>we can make sense of topological statements like &ldquo;the complement of an affine variety is huge&rdquo;.</li>
+</ul>
+<p>We first define a topology on the whole ambient space:</p>
+<div class="definition">
+<b>Definition 3 (Zariski Topology)</b>
+<p>The <b style="color: rgb(20,105,176);">Zariski topology</b> on $\mathbb{A}^n$ (or $\mathbb{P}^n$) is the topology whose <em>closed sets</em> are exactly the affine (projective) varieties, i. e. the subsets of the form $V(S)$ for some set of polynomials $S$.</p>
+</div>
+<p>As in the definition of $V(\cdot)$, we require that $S$ has to consist of homogeneous polynomials in the projective setting $\mathbb{P}^n$.</p>
+<p>Before we check that the Zariski topology indeed forms a topology, let us try to figure out the Zariski topology on $\mathbb{A}^1$ as an example:</p>
+<div class="example">
+<b>Example (Zariski topology on $\mathbb{A}^1$)</b>
+<p>We observe that:</p>
+<ul>
+<li>Closed sets of $\mathbb{A}^1=\mathbb{C}$ are of the form $V(S)$ where $S$ consists of single-variable polynomials $f(x)$.</li>
+<li>By the fundamental theorem of algebra, $f(x)$ has at most $\deg f$ roots, so the same holds for $V(S)$: by definition
+$$x\in V(S)~\Longleftrightarrow~x~\text{is a root of all}~f\in S,$$
+so $V(S)$ is finite.</li>
+<li>Hence, the closed sets are either $\mathbb{A}^1$ itself ($V(0)$) or a finite set (including $\emptyset$). Thus, the <em>open</em> sets are $\emptyset$ and $\mathbb{A}^1$ minus set of finite points.</li>
+</ul>
+<p>In other words, a picture of a &ldquo;typical&rdquo; open set in $\mathbb{A}^1$ might be</p>
+<div class="center"><img src="a1.png" alt="Open sets in A^1" style="max-width:450px;" /></div>
+<p>i.e. it is everything except a few marked points.</p>
+</div>
+<p>Now, as promised, let us check that this indeed form a topology:</p>
+<div class="theorem">
+<b> Theorem 4</b>
+<p>The Zariski topology forms a topology.</p>
+</div>
+<p><em>Proof.</em>  We will only show the result for $\mathbb{A}^n$; the case of $\mathbb{P}^n$ is analogous. It suffices to check the following axioms for a topology:</p>
+<ul>
+<li>
+<p><strong>$\emptyset$  and $\mathbb{A}^n$ are closed</strong>: We have $\emptyset=V(1)$ and $\mathbb{A}^n=V(0)$, so they are closed by definition.</p>
+</li>
+<li>
+<p><strong>The union of any finite number of closed sets are closed</strong>: It suffices to check that the union of two closed sets are closed. Indeed, we shall show that
+$$V(S_1)\cup V(S_2)=V(S_1S_2)$$
+where $S_1S_2:=\lbrace fg:f\in S_1, g\in S_2\rbrace$. <br><br>
+Take $x\in V(S_1)\cup V(S_2)$, then $f(x)=0$ for all $f\in S_1$ or $g(x)=0$ for all $g\in S_2$. In both case this means 
+$$(fg)(x)=0~\text{for all}~f\in S_1~\text{and}~g\in S_2,$$
+i.e. $x\in V(S_1S_2)$. This shows $V(S_1)\cup V(S_2)\subseteq V(S_1S_2)$. ($\supseteq$) is similar.</p>
+</li>
+<li>
+<p><strong>Any intersection (finite or infinite) of closed sets are closed</strong>: Again, one can show similarly (also as an easy exercise) that 
+$$\bigcap_{i\in I} V(S_i)=V\left(\bigcup_{i\in I} S_i\right)$$
+for an index set $I$ and $S_i\subseteq K[x_1,\ldots,x_n]$. Hence the intersection is closed.</p>
+</li>
+</ul>
+<p>The three axioms combined shows the desired statement. □</p>
+<p>The last thing we have to do is to assign a topology on an arbitrary affine (or projective) variety $X$; but the theory of topology automatically does that for us: The Zariski topology on $X$ will be the <b style="color: rgb(20,105,176);">subspace topology</b> on $X$, i.e. the closed (or equivalently, open) sets are of the form $X\cap Y$ where $Y$ is closed (open) in $\mathbb{A}^n$ (or $\mathbb{P}^n$).</p>
+<div class="example">
+<b>Example (Zariski topology on an affine variety)</b>
+<p>Again consider $X=V(y-x^2)\subseteq\mathbb{A}^2$, and let $U=X\setminus{(1,1)}$. We claim $U$ is open in $X$:</p>
+<div class="center"><img src="parabola-open.png" alt="An open set in a parabola" style="max-width:300px;" /></div>
+<p>Indeed, $\tilde{U}=\mathbb{A}^2\setminus{(1,1)}$ is open in $\mathbb{A}^2$ (since it is the complement of the closed set $V(x-1,y-1)$), so $U=\tilde{U}\cap X$ is open in $X$. Note that on the other hand the set $U$ is <strong>not</strong> open in $\mathbb{A}^2$.</p>
+</div>
+<h3 id="grassmannians">Grassmannians</h3>
+<p>Now it just remains to introduce one final tool! Unfortunately, this one&rsquo;s a bit more technical, so bear with me. Recall that a point in $\mathbb{P}^n$ can actually be viewed as a line in $K^{n+1}$, such as $[1:1:0]$ corresponding to the line $\operatorname{Span}(1,1,0)$. In other words, we can view
+$$\mathbb{P}^n=\lbrace 1\text{-dimensional linear subspaces of}~K^{n+1}\rbrace.$$</p>
+<p>Since the definition of projective spaces turned out to be a very useful concept, let us now generalize this and consider instead the sets of $k$-dimensional linear subspaces of $K^{n}$:</p>
+<div class="definition">
+<b>Definition 5 (Grassmannians)</b>
+<p>Let $n$ be a positive integer, and let $k$ be an integer with $0\leq k\leq n$. We denote by $G(k,n)$ the set of all $k$-dimensional linear subspaces of $K^n$, called the <b style="color: rgb(20,105,176);">Grassmannian</b> of $k$-planes in $K^n$.</p>
+</div>
+<p>So, by above, $\mathbb{P}^n=G(1,n+1)$. Surprisingly, although $G(k,n)$ seems to be a generalisation of projective spaces, there is actually a natural embedding of $G(k,n)$ into a projective space $\mathbb{P}^N$ for some $N$. Moreover, &ldquo;points&rdquo; in $G(k,n)$, i.e. the $k$-dimensional subspaces, can be described using polynomials, so $G(k,n)$ will form a projective variety.</p>
+<p>Let us first look at the case of $G(2,n)$. For this to work we will need the algebraic concept of <em>wedge products</em>:</p>
+<div class="definition">
+<b>Definition 6 ($2$-wedge product)</b>
+<p>Let $V$ be a $K$-vector space. The <b style="color: rgb(20,105,176);">$2$-wedge product</b> $\Lambda^2(V)$ is defined as the span of elements of the form
+${v}\wedge {w}$ (where ${v},{w}\in V$), subject to the same relations as the tensor product $\otimes$:</p>
+<ul>
+<li>distributive in $V$:  $({v}_1+{v}_2)\wedge {w}={v}_1\wedge{w}+{v}_2\wedge{w}$;</li>
+<li>distributive in $W$:  ${v}\wedge({w}_1+{w}_2)={v}\wedge{w}_1+{v}\wedge{w}_2$;</li>
+<li>$(\lambda{v})\wedge {w}={v}\wedge (\lambda{w})$.</li>
+</ul>
+<p>but with two additional relations:</p>
+<ul>
+<li>${v}\wedge{v}=0$;</li>
+<li>${v}\wedge{w}=-{w}\wedge{v}$.</li>
+</ul>
+<p>Scalar multiplication is defined by $\lambda\cdot({v}\wedge{w})=(\lambda{v})\wedge {w}={v}\wedge (\lambda{w})$.</p>
+</div>
+<p>If you like, you can phrase this whole definition as saying that $\wedge$ is an alternating bilinear operation. Note that if $V$ has basis $\lbrace e_1,\ldots,e_n\rbrace$, then $\Lambda^2(V)$ has basis 
+$$\lbrace e_i\wedge e_j:i&lt;j\rbrace,$$
+so $\dim \Lambda^2(V)={n\choose 2}$.</p>
+<p>Similarly, we can define the $k$-wedge product $\Lambda^k(V)$ for any integer $0\leq k\leq n$, where the there are $k-1$ wedges, and swapping any two consecutive components negate the whole wedge. Naturally we have $\dim \Lambda^k(V)={n\choose k}$, where the basis is given by
+$$\lbrace e_{i_1}\wedge e_{i_2}\wedge \cdots\wedge e_{i_k}:i_1&lt;i_2&lt;\cdots&lt;i_k\rbrace.$$</p>
+<p>But why do we need these new bizzare spaces for our discussion? Before we answer that, let&rsquo;s first look at an explicit computation:</p>
+<div class="example">
+<b>Example (Explicit computation)</b>
+<p>Let $V=K^2$, and let $v=ae_1+be_2,w=ce_1+de_2$. Now let&rsquo;s compute $v\wedge w$ in $\Lambda^2(V)$:</p>
+<p>$$\begin{aligned}
+{v}\wedge{w} &amp;= (a{e}_1+b{e}_2)\wedge(c{e}_1+d{e}_2) \\
+&amp;= ac({e}_1\wedge{e}_1)+bd({e}_2\wedge{e}_2)+ad({e}_1\wedge{e}_2)+bc({e}_2\wedge{e}_1) \\
+&amp;=ad({e}_1\wedge{e}_2)+bc({e}_2\wedge{e}_1) \\
+&amp;=(ad-bc)({e}_1\wedge{e}_2).
+\end{aligned}
+$$</p>
+</div>
+<p>What is $ad-bc$? You might recognize it as the determinant of $\begin{pmatrix}a &amp; b\\ c &amp; d\end{pmatrix}$. Indeed, the wedge product $v\wedge w$ is highly related to the minors of the matrix with rows as $v$ and $w$. This is in fact a general phenomenon:</p>
+<div class="theorem">
+<b> Fact 7 (Wedge products and determinants)</b>
+<p>Let $v_1,\ldots,v_k\in K^n$. Then the $(e_{i_1}\wedge \cdots\wedge e_{i_k})$-coordinates of $v_1\wedge \cdots\wedge v_k$ is the minor of the matrix whose rows are $v_1,\ldots,v_k$ obtained by taking only the $i_1,\ldots,i_k$-th columns.</p>
+</div>
+<p>This fact just follows from the definition of the determinant. To understand the statement, consider the case $k=2$ and $n=3$. Then by writing $v=a_1e_1+a_2e_2+a_3e_3$ and $w=b_1e_1+b_2e_2+b_3e_3$, the matrix is
+$$\begin{pmatrix}a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3\end{pmatrix}$$
+so the fact is saying that the coefficient of, say $e_2\wedge e_3$, is the determinant of the submatrix by deleting the first column, i.e. $a_2b_3-b_2a_3$.</p>
+<p>Let&rsquo;s come back to algebraic geometry now. We define:</p>
+<div class="definition">
+<b>Definition 8 (Plücker embedding)</b>
+<p>Let $0\leq k\leq n$. Since $\dim\Lambda^k K^n={n\choose k}$, we have $\Lambda^k K^n\cong K^{n\choose k}$, and so can be viewed as the projective space $\mathbb{P}^{{n\choose k}-1}$. The <b style="color: rgb(20,105,176);">Plücker embedding</b> is defined as the map
+$$\begin{aligned}
+f:&amp;&amp;G(k,n)&amp;\to \mathbb{P}^{{n\choose k}-1} \\
+&amp;&amp;\operatorname{Span}(v_1,\ldots,v_k)&amp;\mapsto v_1\wedge\cdots\wedge v_k\in \Lambda^kK^n.
+\end{aligned}$$</p>
+</div>
+<p>We have to check that this map $f$ is well-defined, i.e. we have to check:</p>
+<ul>
+<li>$v_1\wedge\cdots\wedge v_k$ will not be zero, or else it is not a point in $\mathbb{P}^{{n\choose k}-1}$.</li>
+<li>Choosing a different basis of the subspace $\operatorname{Span}(v_1,\ldots,v_k)$ does not change the resulting point in $\mathbb{P}^{{n\choose k}-1}$.</li>
+</ul>
+<p>These two statements can be resolved by the following lemma:</p>
+<div class="theorem">
+<b> Lemma 9</b>
+<p>Let $V=\operatorname{Span}(v_1,\ldots, v_k)$ and $W=\operatorname{Span}(w_1,\ldots, w_k)$. Then:</p>
+<ol type="i">
+<li>$f(V)=0$ if and only if $v_1,\ldots,v_k$ are linearly dependent.</li>
+<li>$f(V)$ and $f(W)$ are linearly dependent in $\Lambda^k K^n$ if and only if $V=W$.</li>
+</ol>
+</div>
+<p><em>Proof.</em>   We will only prove the first statement, and the second one is left as an exercise (in linear algebra). By Fact 7, we have $v_1\wedge \cdots\wedge v_k=0$ iff all maximal minors of the matrix with rows $v_1,\ldots,v_k$ are zero. But this is the case iff this matrix does not have full rank, i.e. iff $v_1,\ldots,v_k$ are linearly dependent. □</p>
+<p>So we finally can explain why the wedge product is useful. At first we want to assign a subspace in $G(k,n)$ to a unique point in $\mathbb{P}^N$, but <strong>the wedge product does exactly that</strong>, since:</p>
+<ul>
+<li>The bilinear conditions guarantee that the same subspace with a different basis still generates the same $v_1\wedge\cdots\wedge v_k$, up to multiplication of a scalar (by Lemma 9(ii)). But then they correspond to the same point in $\mathbb{P}^N$ since scalars are neglected.</li>
+<li>The additional condition $\cdots\wedge v\wedge v\wedge\cdots=0$ guarantee that points in $\mathbb{P}^N$ only correspond to $k$-dimensional subspaces, not the ones with smaller dimensions.</li>
+</ul>
+<p>Finally, one can check that this map $f$ is injective (again by Lemma 9(ii)), hence the name &ldquo;embedding&rdquo;.</p>
+<div class="example">
+<b>Example (Plücker embedding)</b>
+<p>Let us compute some examples of the Plücker embedding to see what it actually is doing:</p>
+<ul>
+<li>The Plücker embedding of $G(1,n)$ simply maps a linear subspace $\operatorname{Span}(a_1e_1+\cdots+a_ne_n)$ to $(a_1:\cdots:a_n)\in \mathbb{P}^{{n\choose 1}-1}=\mathbb{P}^{n-1}$. Hence $G(1,n)=\mathbb{P}^{n-1}$ as expected.</li>
+<li>Consider the subspace $L=\operatorname{Span}(e_1+e_2,e_1+e_3)\in G(2,3)$ of $K^3$. The coordinates of $f(L)$ would be the maximal minors of 
+$$\begin{pmatrix}1 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1\end{pmatrix},$$
+so under the basis $\lbrace e_1\wedge e_2,e_1\wedge e_3,e_2\wedge e_3\rbrace$ the corresponding point in $\mathbb{P}^{{3\choose 2}-1}=\mathbb{P}^2$ is $[-1:1:1]$.</li>
+</ul>
+</div>
+<p>So far we have embedded the Grassmannian $G(k,n)$ into a projective space, but we still have to see that it is a closed subset, i.e. a projective variety. As an idea, the proof is purely algebraic, by noticing that the image of the Plücker embedding are the set of <b style="color: rgb(20,105,176);">pure tensors</b>, i.e. the wedge products that doesn&rsquo;t involve sums. This then turns out to be a polynomial condition, so $G(k,n)$ is closed. We will omit the proof, since it doesn&rsquo;t contribute much to our discussion. Readers who want to know the whole process might consult <a class="link" href="https://www.mathematik.uni-kl.de/~gathmann/class/alggeom-2021/alggeom-2021-c8.pdf"  target="_blank" rel="noopener"
+    >here</a>.</p>
+<h2 id="part-2-the-problem">Part 2: The problem</h2>
+<h2 id="part-3-the-solution">Part 3: The solution</h2>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/varieties/">varieties</a>
+        
+            <a href="/tags/27-lines/">27 lines</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  <section class="copyright">
+    &copy;
+    
+    2022 Bendit Chan
+  </section>
+
+  <section class="powerby">
+    Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> and <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="%s">Stack</a>
+  </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#part-1-the-tools">Part 1: The tools</a>
+      <ol>
+        <li><a href="#the-ambient-space">The ambient space</a></li>
+        <li><a href="#the-zariski-topology">The Zariski Topology</a></li>
+        <li><a href="#grassmannians">Grassmannians</a></li>
+      </ol>
+    </li>
+    <li><a href="#part-2-the-problem">Part 2: The problem</a></li>
+    <li><a href="#part-3-the-solution">Part 3: The solution</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

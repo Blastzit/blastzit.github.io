@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blastzit.github.io/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-hk"
@@ -14,6 +14,47 @@
                 hreflang="en"
                 href="https://blastzit.github.io/"
                 />
+  </url><url>
+    <loc>https://blastzit.github.io/tags/27-lines/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blastzit.github.io/categories/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hk"
+                href="https://blastzit.github.io/zh-hk/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blastzit.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://blastzit.github.io/categories/mathematics/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blastzit.github.io/post/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blastzit.github.io/tags/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hk"
+                href="https://blastzit.github.io/zh-hk/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blastzit.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://blastzit.github.io/tags/varieties/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blastzit.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
@@ -43,36 +84,10 @@
                 href="https://blastzit.github.io/about-me/"
                 />
   </url><url>
-    <loc>https://blastzit.github.io/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hk"
-                href="https://blastzit.github.io/zh-hk/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blastzit.github.io/categories/"
-                />
-  </url><url>
     <loc>https://blastzit.github.io/links/</loc>
-  </url><url>
-    <loc>https://blastzit.github.io/categories/mathematics/</loc>
   </url><url>
     <loc>https://blastzit.github.io/notes/</loc>
   </url><url>
     <loc>https://blastzit.github.io/search/</loc>
-  </url><url>
-    <loc>https://blastzit.github.io/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hk"
-                href="https://blastzit.github.io/zh-hk/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blastzit.github.io/tags/"
-                />
   </url>
 </urlset>
