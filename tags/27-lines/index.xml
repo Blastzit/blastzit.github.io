@@ -6,13 +6,13 @@
         <description>Recent content in 27 lines on Bendit Chan</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blastzit.github.io/tags/27-lines/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>An adventure to find 27 lines on a smooth cubic surface</title>
-        <link>https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/</link>
-        <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+        <lastBuildDate>Sun, 23 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blastzit.github.io/tags/27-lines/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>An adventure to find 27 lines on a smooth cubic surface: Part 1</title>
+        <link>https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface-part-1/</link>
+        <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/</guid>
-        <description>&lt;img src="https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface/cubic.png" alt="Featured image of post An adventure to find 27 lines on a smooth cubic surface" /&gt;&lt;style&gt;
+        <guid>https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface-part-1/</guid>
+        <description>&lt;img src="https://blastzit.github.io/p/an-adventure-to-find-27-lines-on-a-smooth-cubic-surface-part-1/cubic.png" alt="Featured image of post An adventure to find 27 lines on a smooth cubic surface: Part 1" /&gt;&lt;style&gt;
     .definition {
         box-shadow: 6px 6px rgba(20,105,176,0.3);
         background-color: rgba(20,105,176,0.06);
@@ -59,6 +59,7 @@
 &lt;p&gt;Well, it certainly occurs to me that 27 carries a special meaning to algebraic geometrists. Over the summer I&amp;rsquo;m lucky to have the chance to do a &lt;a class=&#34;link&#34; href=&#34;https://www.imperial.ac.uk/urop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;UROP&lt;/a&gt; with &lt;a class=&#34;link&#34; href=&#34;https://www.imperial.ac.uk/people/j.nicaise&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Prof. Johannes Nicaise&lt;/a&gt;, and he suggested that I should embark a journey aiming to understand this statement, which is exactly what I did and what I will try to reconstruct in this post.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;This is the first half of a two-part post on this topic. For the other half, see &lt;a class=&#34;link&#34; href=&#34;&#34; &gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;part-1-the-tools&#34;&gt;Part 1: The tools&lt;/h2&gt;
 &lt;p&gt;Before delving into the intricacies of the 27 lines, we need to arm ourselves with some tools. We ought to answer questions like: What is a cubic surface? What is smooth? Where exactly do they live? What are lines? What is 27? &lt;del&gt;What even is maths?&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;Let us start with the easiest question to answer: what is the ambient space of a cubic surface?&lt;/p&gt;
@@ -73,7 +74,7 @@ $$V(S):=\lbrace x\in \mathbb{A}^n: f(x)=0~\text{for all}~f\in S\rbrace\subseteq 
 the &lt;b style=&#34;color: rgb(20,105,176);&#34;&gt;zero locus&lt;/b&gt; of $S$. Subsets of $\mathbb{A}^n$ of this form are called &lt;b style=&#34;color: rgb(20,105,176);&#34;&gt;affine varieties&lt;/b&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The main idea is that Algebraic Geometry study objects defined via polynomials; for example, a parabola is the zero locus of the polynomial $y-x^2$:&lt;/p&gt;
-&lt;div class=&#34;center&#34;&gt;&lt;img src=&#34;parabola-test.png&#34; alt=&#34;Parabola&#34; style=&#34;width=100%; max-width:350px;&#34; /&gt;&lt;/div&gt;
+&lt;div class=&#34;center&#34;&gt;&lt;img src=&#34;parabola.png&#34; alt=&#34;Parabola&#34; style=&#34;max-width:350px;&#34; /&gt;&lt;/div&gt;
 &lt;p&gt;This is natural, but is not good enough: it turns out that these affine varieties are &lt;strong&gt;never compact&lt;/strong&gt; in the classical topology (unless they consist of finitely many points). We don&amp;rsquo;t want this because &lt;a class=&#34;link&#34; href=&#34;https://math.stackexchange.com/questions/85394/why-the-emphasis-on-projective-space-in-algebraic-geometry&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;some varieties end up having no points&lt;/a&gt;, so counting intersections on our cubics and all sorts of related stuff fail.&lt;/p&gt;
 &lt;p&gt;The way out of this is to consider a &amp;ldquo;compactification&amp;rdquo; of $\mathbb{A}^n$. Suppose you have two equations that originally does not intersect in the affine space, say:&lt;/p&gt;
@@ -81,7 +82,7 @@ the &lt;b style=&#34;color: rgb(20,105,176);&#34;&gt;zero locus&lt;/b&gt; of $S$
 &lt;p&gt;By making the equation &lt;em&gt;homogeneous&lt;/em&gt;, i.e. such that all terms have the same degree, we resolve this problem: the new equations are then&lt;/p&gt;
 &lt;p&gt;$$x+y=z~~~\text{and}~~~x+y=2z,$$&lt;/p&gt;
 &lt;p&gt;so they intersect at $(x,y,z)=(\lambda,-\lambda,0)$, which we can think of as a &amp;ldquo;point&amp;rdquo; infinitely far in the direction of $(1,-1,0)$.&lt;/p&gt;
-&lt;div class=&#34;center&#34;&gt;&lt;img src=&#34;point-at-infinity.png&#34; alt=&#34;Point at infinity&#34; style=&#34;width=100%; max-width:350px;&#34; /&gt;&lt;/div&gt;
+&lt;div class=&#34;center&#34;&gt;&lt;img src=&#34;point-at-infinity.png&#34; alt=&#34;Point at infinity&#34; style=&#34;max-width:400px;&#34; /&gt;&lt;/div&gt;
 &lt;p&gt;Note that we always get &amp;ldquo;lines through the origin&amp;rdquo; as solutions of homogeneous equations (in this particular case, the line is spanned by $(1,-1,0)$), since if $f(x_1,\ldots,x_n)$ is homogeneous then&lt;/p&gt;
 &lt;p&gt;$$f(x_1,\ldots,x_n)=0~\Longrightarrow~f(\lambda x_1,\ldots,\lambda x_n)=0$$&lt;/p&gt;
 &lt;p&gt;for any $\lambda\in K$. This motivates the definition of the &lt;b style=&#34;color: rgb(20,105,176);&#34;&gt;projective space&lt;/b&gt;:&lt;/p&gt;
@@ -249,10 +250,10 @@ $$\begin{pmatrix}1 &amp;amp; 1 &amp;amp; 0 \\ 1 &amp;amp; 0 &amp;amp; 1\end{pmat
 so under the basis $\lbrace e_1\wedge e_2,e_1\wedge e_3,e_2\wedge e_3\rbrace$ the corresponding point in $\mathbb{P}^{{3\choose 2}-1}=\mathbb{P}^2$ is $[-1:1:1]$.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;So far we have embedded the Grassmannian $G(k,n)$ into a projective space, but we still have to see that it is a closed subset, i.e. a projective variety. As an idea, the proof is purely algebraic, by noticing that the image of the Plücker embedding are the set of &lt;b style=&#34;color: rgb(20,105,176);&#34;&gt;pure tensors&lt;/b&gt;, i.e. the wedge products that doesn&amp;rsquo;t involve sums. This then turns out to be a polynomial condition, so $G(k,n)$ is closed. We will omit the proof, since it doesn&amp;rsquo;t contribute much to our discussion. Readers who want to know the whole process might consult &lt;a class=&#34;link&#34; href=&#34;https://www.mathematik.uni-kl.de/~gathmann/class/alggeom-2021/alggeom-2021-c8.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;Pictorially, we can now see $G(k,n)$ as an object living in $\mathbb{P}^{N-1}$, whose points parameterise $k$-dimensional subspaces in $K^n$:&lt;/p&gt;
+&lt;div class=&#34;center&#34;&gt;&lt;img src=&#34;grassmannian.png&#34; alt=&#34;Grassmannian&#34; style=&#34;max-width:750px;&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;But we are still yet to see that it is a closed subset, i.e. a projective variety. As an idea, the proof is purely algebraic, by noticing that the image of the Plücker embedding are the set of &lt;b style=&#34;color: rgb(20,105,176);&#34;&gt;pure tensors&lt;/b&gt;, i.e. the wedge products that doesn&amp;rsquo;t involve sums. This then turns out to be a polynomial condition, so $G(k,n)$ is closed. We will omit the proof, since it doesn&amp;rsquo;t contribute much to our discussion. Readers who want to know the whole process might consult &lt;a class=&#34;link&#34; href=&#34;https://www.mathematik.uni-kl.de/~gathmann/class/alggeom-2021/alggeom-2021-c8.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;part-2-the-problem&#34;&gt;Part 2: The problem&lt;/h2&gt;
-&lt;h2 id=&#34;part-3-the-solution&#34;&gt;Part 3: The solution&lt;/h2&gt;
 </description>
         </item>
         
